@@ -22,12 +22,12 @@
 
 
     //Conta a quantidade de produtos ativos
-    $query_produtos = "SELECT COUNT(id) AS qnt_produtos FROM produtos WHERE situacao=1";
-    $result_produtos = $conn->prepare($query_produtos);
-    $result_produtos->execute();
+    $query_prod_ativo = "SELECT COUNT(id) AS qnt_produtos FROM produtos WHERE situacao=1";
+    $result_prod_ativo = $conn->prepare($query_prod_ativo);
+    $result_prod_ativo->execute();
 
-    $row_produto = $result_produtos->fetch(PDO::FETCH_ASSOC);
-    echo "Quantidade de produtos ativos: " . $row_produto['qnt_produtos'] . "<br><br>";
+    $row_prod_ativo = $result_prod_ativo->fetch(PDO::FETCH_ASSOC);
+    echo "Quantidade de produtos ativos: " . $row_prod_ativo['qnt_produtos'] . "<br><br>";
 
     ?>
 </body>
