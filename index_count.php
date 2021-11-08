@@ -18,8 +18,8 @@
     $result_produtos = $conn->prepare($query_produtos);
     $result_produtos->execute();
 
-    $row_produto = $result_produtos->fetch(PDO::FETCH_ASSOC);
-    echo "Quantidade de produtos: " . $row_produto['qnt_produtos'] . "<br><br>";
+    $row_produtos = $result_produtos->fetch(PDO::FETCH_ASSOC);
+    echo "Quantidade de produtos: " . $row_produtos['qnt_produtos'] . "<br><br>";
 
 
     //Conta a quantidade de produtos ativos
