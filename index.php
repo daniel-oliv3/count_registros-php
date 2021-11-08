@@ -13,6 +13,16 @@
 <body>
     <?php
     
+    $query_produtos = "SELECT COUNT(id) AS qnt_produtos FROM produtos";
+    $result_produtos = $conn->prepare($query_produtos);
+    $result_produtos->execute();
+
+    $row_produto = $result_produtos->fetch(PDO::FETCH_ASSOC);
+    echo "Quantidade de produtos: " . $row_produto['qnt_produtos'] . "<br><br>";
+
+
+    
+
     ?>
 </body>
 </html>
