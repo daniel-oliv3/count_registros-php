@@ -19,7 +19,15 @@
     $result_produtos->execute();
 
     $row_produtos = $result_produtos->fetch(PDO::FETCH_ASSOC);
-    echo "Quantidade de produtosno estoque: " . $row_produtos['qnt_produtos'] . "<br><br>";
+    echo "Quantidade de produtos no estoque: " . $row_produtos['qnt_produtos'] . "<br><br>";
+
+    //Soma a quantidade de produtos ativos
+    $query_prod_ativos = "SELECT SUM(quantidade) AS qnt_produtos FROM produtos WHERE situacao=1";
+    $result_prod_ativos = $conn->prepare($query_prod_ativos);
+    $result_prod_ativos->execute();
+
+    $row_prod_ativos = $result_prod_ativos->fetch(PDO::FETCH_ASSOC);
+    echo "Quantidade de produtos ativos no estoque: " . $row_prod_ativos['qnt_produtos'] . "<br><br>";
     
     ?>
 </body>
