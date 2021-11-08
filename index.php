@@ -12,7 +12,7 @@
 </head>
 <body>
     <?php
-    
+    //Conta a quantidade total de produtos
     $query_produtos = "SELECT COUNT(id) AS qnt_produtos FROM produtos";
     $result_produtos = $conn->prepare($query_produtos);
     $result_produtos->execute();
@@ -21,7 +21,13 @@
     echo "Quantidade de produtos: " . $row_produto['qnt_produtos'] . "<br><br>";
 
 
-    
+    //Conta a quantidade de produtos ativos
+    $query_produtos = "SELECT COUNT(id) AS qnt_produtos FROM produtos WHERE situacao=1";
+    $result_produtos = $conn->prepare($query_produtos);
+    $result_produtos->execute();
+
+    $row_produto = $result_produtos->fetch(PDO::FETCH_ASSOC);
+    echo "Quantidade de produtos ativos: " . $row_produto['qnt_produtos'] . "<br><br>";
 
     ?>
 </body>
