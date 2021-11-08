@@ -29,6 +29,15 @@
     $row_prod_ativo = $result_prod_ativo->fetch(PDO::FETCH_ASSOC);
     echo "Quantidade de produtos ativos: " . $row_prod_ativo['qnt_produtos'] . "<br><br>";
 
+
+    //Conta a quantidade de produtos inativos
+    $query_prod_inativo = "SELECT COUNT(id) AS qnt_produtos FROM produtos WHERE situacao=2";
+    $result_prod_inativo = $conn->prepare($query_prod_inativo);
+    $result_prod_inativo->execute();
+
+    $row_prod_inativo = $result_prod_inativo->fetch(PDO::FETCH_ASSOC);
+    echo "Quantidade de produtos inativos: " . $row_prod_inativo['qnt_produtos'] . "<br><br>";
+
     ?>
 </body>
 </html>
