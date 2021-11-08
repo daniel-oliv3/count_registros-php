@@ -11,6 +11,7 @@
     <title>Sapup3 Count</title>
 </head>
 <body>
+    
     <?php
     //Conta a quantidade de produtos
     $query_produtos = "SELECT COUNT(id) AS qnt_produtos FROM produtos";
@@ -39,5 +40,6 @@
     echo "Quantidade de produtos inativos: " . $row_prod_inativo['qnt_produtos'] . "<br><br>";
 
     ?>
+
 </body>
 </html>
