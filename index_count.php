@@ -8,11 +8,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut ico" href="favicon.ico" type="image/x-ico">
-    <title>Sapup3</title>
+    <title>Sapup3 Count</title>
 </head>
 <body>
     <?php
-    //Conta a quantidade total de produtos
+    //Conta a quantidade de produtos
     $query_produtos = "SELECT COUNT(id) AS qnt_produtos FROM produtos";
     $result_produtos = $conn->prepare($query_produtos);
     $result_produtos->execute();
