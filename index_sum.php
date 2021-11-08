@@ -13,7 +13,13 @@
 <body>
     <?php
     
-    
+    //Soma a quantidade de produtos
+    $query_produtos = "SELECT SUM(quantidade) AS qnt_produtos FROM produtos";
+    $result_produtos = $conn->prepare($query_produtos);
+    $result_produtos->execute();
+
+    $row_produtos = $result_produtos->fetch(PDO::FETCH_ASSOC);
+    echo "Quantidade de produtosno estoque: " . $row_produtos['qnt_produtos'] . "<br><br>";
     
     ?>
 </body>
