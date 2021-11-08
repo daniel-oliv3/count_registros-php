@@ -13,7 +13,7 @@ try {
     //Conexão sem porta
     //$conn = new PDO("mysql:host=$host;dbname=" . $dbname, $user, $pass);
 
-    echo "Conexão com banco de dados realzada com sucesso!<br><br>";
+    //echo "Conexão com banco de dados realzada com sucesso!<br><br>";
 }catch(PDOException $err){
     echo "Erro: Conexão com banco de dados não foi realizada!. Erro gerado " . $err->getMessage();
 }
