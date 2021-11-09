@@ -32,7 +32,7 @@
 
     //Lucro (a ordem altera o fator-)
     $lucro = $row_valor_venda['valor_estoque'] - $row_valor_compra['valor_estoque'];
-    echo "Lucro: " . number_format($lucro, 2, ",", ".") . "<br><br>";
+    echo "Lucro R$: " . number_format($lucro, 2, ",", ".") . "<br><br>";
     ?>
 </body>
 </html>
