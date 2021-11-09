@@ -25,8 +25,10 @@ DROP TABLE IF EXISTS `produtos`;
 CREATE TABLE `produtos` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `preco_venda` int NOT NULL,
+  `preco_compra` double NOT NULL,
+  `preco_venda` double NOT NULL,
   `quantidade` int NOT NULL,
+  `situacao` int NOT NULL DEFAULT '2',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -37,7 +39,7 @@ CREATE TABLE `produtos` (
 
 LOCK TABLES `produtos` WRITE;
 /*!40000 ALTER TABLE `produtos` DISABLE KEYS */;
-INSERT INTO `produtos` VALUES (1,'Smart TV 55 Crystal 4k Samsung',3100,3),(2,'Smart TV LED PRO 32 HD LG',1415,8),(3,'Refrigerador Top Freezer cor Inox 382L Eletrolux',2579,4),(4,'HD Externo Portátil Seagate 1tb Usb 3.0',318,23),(5,'Impressora Multifuncional HP Laser 135a preta',1100,7);
+INSERT INTO `produtos` VALUES (1,'Smart TV 55 Crystal 4k Samsung',2500,3100,3,2),(2,'Smart TV LED PRO 32 HD LG',980,1415.3,8,1),(3,'Refrigerador Top Freezer cor Inox 382L Eletrolux',1820,2578.67,4,2),(4,'HD Externo Portátil Seagate 1tb Usb 3.0',150,318.15,23,1),(5,'Impressora Multifuncional HP Laser 135a preta',600,1099.73,7,2);
 /*!40000 ALTER TABLE `produtos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-08 12:09:53
+-- Dump completed on 2021-11-09 11:12:18
