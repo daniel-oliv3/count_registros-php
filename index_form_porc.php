@@ -25,6 +25,9 @@
         var_dump($dados);
         $valor_desconto = $valor_orginal / 100 * $dados['porcentagem'];
         echo "Valor do desconto R$: " . number_format($valor_desconto, 2, ",", ".") . "<br><br>";
+
+        $prod_com_desconto = $valor_orginal - $valor_desconto;
+        echo "Produto do desconto R$: " . number_format($prod_com_desconto, 2, ",", ".") . "<br><br>";
     }
     
 
