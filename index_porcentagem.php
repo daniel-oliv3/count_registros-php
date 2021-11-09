@@ -12,11 +12,15 @@
 </head>
 <body>
     <?php
-    
-    //Porcentagem, desconto, acréscimo
-    
+    //Desconto
+    $valor_original = 100;
+    $porcentagem = 25;
 
+    $valor_desconto = $valor_original / 100 * $porcentagem;
+    echo "Valor do desconto R$: " . number_format($valor_desconto, 2, ",", ".") . "<br>";
 
+    $prod_com_desconto = $valor_original - $valor_desconto;
+    echo "Produto com desconto R$: " . number_format($prod_com_desconto, 2, ",", ".") . "<br>";
     ?>
 </body>
 </html>
