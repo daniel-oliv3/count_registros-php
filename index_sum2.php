@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut ico" href="favicon.ico" type="image/x-ico">
-    <title>Sapup3 - Sum</title>
+    <title>Sapup3 - Sum 2</title>
 </head>
 <body>
     <?php
@@ -29,6 +29,10 @@
     $row_valor_venda = $result_valor_venda->fetch(PDO::FETCH_ASSOC);
     echo "Valor do estoque (venda) R$: " . number_format($row_valor_venda['valor_estoque'], 2, ",", ".") . "<br><br>";
 
+
+    //Lucro (a ordem altera o fator-)
+    $lucro = $row_valor_venda['valor_estoque'] - $row_valor_compra['valor_estoque'];
+    echo "Lucro: " . number_format($lucro, 2, ",", ".") . "<br><br>";
     ?>
 </body>
 </html>
